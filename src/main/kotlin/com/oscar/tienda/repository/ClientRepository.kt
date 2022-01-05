@@ -7,3 +7,4 @@ interface ClientRepository:JpaRepository <Client,Long> {
         // interface WorkoutRepository:JpaRepository<Workout, Long> {}
         fun findById(id: Long?): Client?
 }
+
