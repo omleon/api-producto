@@ -16,7 +16,20 @@ class ProductController {
     fun list(): List<Product>{
         return productService.list()
     }
-   /* @PostMapping
-    fun save(@RequestBody product:Product): Product{
+    @PostMapping
+    fun save(@RequestBody product: Product): Product{
         return productService.save(product)
-    */}
+    }
+    @PutMapping
+    fun update (@RequestBody product: Product):Product{
+        return productService.update(product)
+    }
+    @PatchMapping
+    fun updaateDescription (@RequestBody product: Product): Product{
+        return  productService.updateDescription(product)
+    }
+    @DeleteMapping("/delete/{id}")
+    fun delete (@PathVariable("id")id: Long):Boolean{
+        return productService.delete(id)
+    }
+}
